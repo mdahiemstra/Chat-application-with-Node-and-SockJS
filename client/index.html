@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SockJS Chat server test</title>
+
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+    <script src="./js/lib/chat.js"></script>
+    <script src="./js/client.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      html,
+      body {
+        height: 100%;
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #input {
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+
+      #chat {
+        margin-top: 30px;
+      }
+
+      #messages {
+        width: 700px;
+        
+        float: left;
+      }
+      #users {
+        width: 250px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        padding: 15px;
+        float: left;
+      }
+
+      .input-append {
+        margin-top: 8px;
+      }
+      .input-append input {
+        width: 100%;
+        height: 34px;
+      }
+    </style>
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div id="wrap">
+
+      <div class="container">
+
+        <section id="login" >
+            <form action="" method="post" id="userdata">
+                <input type="text" name="username" placeholder="Your name" />
+            </form>
+        </section>
+
+        <section id="chat" style="display:none;">
+            <div id="messages">
+                <ul>
+                    <li>msg1</li>
+                    <li>msg2</li>
+                </ul>
+            </div>
+            <div id="users">
+                <ul>
+                    <li>user1</li>
+                    <li>user2</li>
+                </ul></div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <div id="input" style="display:none;">
+      <div class="container">
+            <div class="input-append">
+              <input class="span2" id="appendedInputButton" type="text">
+              <button class="btn btn-large" type="button">Send</button>
+            </div>
+      </div>
+    </div>
+
+  </body>
+</html>
