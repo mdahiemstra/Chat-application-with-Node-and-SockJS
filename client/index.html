@@ -61,6 +61,9 @@
         width: 100%;
         height: 34px;
       }
+      .user {
+        text-decoration: underline;
+      }
     </style>
     <link href="./css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -84,15 +87,12 @@
         <section id="chat" style="display:none;">
             <div id="messages">
                 <ul>
-                    <li>msg1</li>
-                    <li>msg2</li>
                 </ul>
             </div>
             <div id="users">
                 <ul>
-                    <li>user1</li>
-                    <li>user2</li>
-                </ul></div>
+                </ul>
+            </div>
         </section>
 
       </div>
@@ -102,8 +102,10 @@
     <div id="input" style="display:none;">
       <div class="container">
             <div class="input-append">
-              <input class="span2" id="appendedInputButton" type="text">
-              <button class="btn btn-large" type="button">Send</button>
+              <form action="" method="post" id="message_form">
+                <input name="message_text" type="text">
+                <button class="btn btn-large" type="submit">Send</button>
+              </form>
             </div>
       </div>
     </div>
