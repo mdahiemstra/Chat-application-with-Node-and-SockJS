@@ -27,10 +27,12 @@ var App = function(Chat) {
 
     this.userJoined = function (payload) {
         $('#users ul').append('<li id="user_'+payload.id+'">'+payload.username+'</li>');
+        $('#messages').append('<li>'+payload.username+' joined on '+new Date()+'</li>');
     }
 
     this.userLeft = function (payload) {
         $('#users ul #user_'+payload.id).remove();
+        $('#messages').append('<li>'+payload.username+' left</li>');
     }
 
     this.chatMessage = function (payload) {

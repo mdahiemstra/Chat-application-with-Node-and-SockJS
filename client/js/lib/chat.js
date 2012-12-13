@@ -1,12 +1,15 @@
 var Chat = function() {
 
     this.socket = new SockJS('http://localhost:5000/chat');
+    this.username = false;
 
     this.login = function(username, callback) {
 
         if (!this.username && username != '') {
 
-            return this.server({"method": "login", "payload": {"username": username}});
+            this.username = username;
+
+            return this.server({"method": "login", "payload": {"username": this.username}});
         }
     };
 

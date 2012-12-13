@@ -57,14 +57,18 @@ echo.on('connection', function(conn) {
 
     conn.on('close', function() {
         delete clients[conn.id];
-        delete users[conn.id];
 
         broadcast({"response": {
             "method": "user_left",
             "payload": {
-                "id": conn.id
+                "id": conn.id,
+                "username": users[conn.id]
             }
         }});
+
+        console.log('DEBUG - USER LEFT: '+users[conn.id]);
+
+        delete users[conn.id];
     });
 });
 
